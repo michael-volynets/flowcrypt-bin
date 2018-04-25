@@ -63,7 +63,7 @@ Configuration directives can also be specified as command-line arguments (below)
       -p, --dest-port int                 Destination syslog port (default 514)
           --eventmachine-tail             No action, provided for backwards compatibility
       -f, --facility string               Facility (default "user")
-          --hostname string               Local hostname to send from (default "mmartin-mb")
+          --hostname string               Local hostname to send from (default: OS hostname)
           --log string                    Set loggo config, like: --log="<root>=DEBUG" (default "<root>=INFO")
           --new-file-check-interval int   How often to check for new files (seconds) (default 10)
       -D, --no-detach                     Don't daemonize and detach from the terminal; overrides --debug-log-cfg
@@ -287,7 +287,7 @@ root logger to the `DEBUG` level and output to `logfile.txt`.
 ### Truncated messages
 
 To send messages longer than 1024 characters, use TCP (either TLS or cleartext
-TCP) of UDP. See "[Sending messages securely](#sending-messages-securely)" to
+TCP) instead of UDP. See "[Sending messages securely](#sending-messages-securely)" to
 use TCP with TLS for messages of any length.
 
 [Here's why](http://help.papertrailapp.com/kb/configuration/troubleshooting-remote-syslog-reachability/#message-length) longer UDP messages are impossible to send over
